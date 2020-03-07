@@ -74,15 +74,15 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            SizedBox(height: 30,),
+            SizedBox(height: 20,),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   FadeAnimation(1, Text("Flowering Plants", style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey[800],
+                      color: Colors.yellowAccent,
                       fontSize: 20),)),
                   SizedBox(height: 20,),
                   FadeAnimation(1.4, Container(
@@ -105,6 +105,73 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 20,),
                   FadeAnimation(1, Text("Succulent Plant", style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.yellowAccent,
+                      fontSize: 20),)),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1.4, Container(
+                    height: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        makeItem(image: 'assets/images/snake.jpg',
+                            title: 'Snake Plant'),
+                        makeItem(
+                            image: 'assets/images/aloe.jpg', title: 'Aloe Vera'),
+                        makeItem(
+                            image: 'assets/images/mother.jpg', title: 'Mother of Thousands'),
+                        makeItem(image: 'assets/images/panda.jpg',
+                            title: 'Panda Plant')
+                      ],
+                    ),
+                  )),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1, Text("Foliage Plants", style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.yellowAccent,
+                      fontSize: 20),)),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1.4, Container(
+                    height: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        makeItem(image: 'assets/images/swiss.jpg',
+                            title: 'Swiss Cheese Plant'),
+                        makeItem(
+                            image: 'assets/images/velvet.jpg', title: ''
+                            'Green Velvet'),
+                        makeItem(
+                            image: 'assets/images/watermelon.png', title: 'Watermelon Peperomia'),
+                        makeItem(image: 'assets/images/heart.png',
+                            title: 'Heart Leaf')
+                      ],
+                    ),
+                  )),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1, Text("Cactus Plants", style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.yellowAccent,
+                      fontSize: 20),)),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1.4, Container(
+                    height: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        makeItem(image: 'assets/images/snake.jpg',
+                            title: 'Snake Plant'),
+                        makeItem(
+                            image: 'assets/images/aloe.jpg', title: 'Aloe Vera'),
+                        makeItem(
+                            image: 'assets/images/mother.jpg', title: 'Mother of Thousands'),
+                        makeItem(image: 'assets/images/panda.jpg',
+                            title: 'Panda Plant')
+                      ],
+                    ),
+                  )),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1, Text("Succulent Plant", style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       color: Colors.grey[800],
                       fontSize: 20),)),
                   SizedBox(height: 20,),
@@ -118,7 +185,29 @@ class _HomePageState extends State<HomePage> {
                         makeItem(
                             image: 'assets/images/aloe.jpg', title: 'Aloe Vera'),
                         makeItem(
-                            image: 'assets/images/motherO.jpeg', title: 'Mother of Thousands'),
+                            image: 'assets/images/mother.jpg', title: 'Mother of Thousands'),
+                        makeItem(image: 'assets/images/panda.jpg',
+                            title: 'Panda Plant')
+                      ],
+                    ),
+                  )),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1, Text("Succulent Plant", style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[800],
+                      fontSize: 20),)),
+                  SizedBox(height: 20,),
+                  FadeAnimation(1.4, Container(
+                    height: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        makeItem(image: 'assets/images/snake.jpg',
+                            title: 'Snake Plant'),
+                        makeItem(
+                            image: 'assets/images/aloe.jpg', title: 'Aloe Vera'),
+                        makeItem(
+                            image: 'assets/images/mother.jpg', title: 'Mother of Thousands'),
                         makeItem(image: 'assets/images/panda.jpg',
                             title: 'Panda Plant')
                       ],
