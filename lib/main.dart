@@ -158,14 +158,14 @@ class _HomePageState extends State<HomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        makeItem(image: 'assets/images/snake.jpg',
-                            title: 'Snake Plant'),
+                        makeItem(image: 'assets/images/bunny.jpg',
+                            title: 'Bunny Ears Plant'),
                         makeItem(
-                            image: 'assets/images/aloe.jpg', title: 'Aloe Vera'),
+                            image: 'assets/images/easter.jpg', title: 'Easter Cactus'),
                         makeItem(
-                            image: 'assets/images/mother.jpg', title: 'Mother of Thousands'),
-                        makeItem(image: 'assets/images/panda.jpg',
-                            title: 'Panda Plant')
+                            image: 'assets/images/golden.jpg', title: 'Golden Barrel Cactus'),
+                        makeItem(image: 'assets/images/peruvian.jpg',
+                            title: 'Peruvian Apple')
                       ],
                     ),
                   )),
