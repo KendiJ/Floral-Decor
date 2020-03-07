@@ -170,9 +170,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )),
                   SizedBox(height: 20,),
-                  FadeAnimation(1, Text("Succulent Plant", style: TextStyle(
+                  FadeAnimation(1, Text("Indoor Palmm Plants", style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey[800],
+                      color: Colors.yellowAccent,
                       fontSize: 20),)),
                   SizedBox(height: 20,),
                   FadeAnimation(1.4, Container(
@@ -180,14 +180,14 @@ class _HomePageState extends State<HomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        makeItem(image: 'assets/images/snake.jpg',
-                            title: 'Snake Plant'),
+                        makeItem(image: 'assets/images/areca.jpg',
+                            title: 'Areca Palm'),
                         makeItem(
-                            image: 'assets/images/aloe.jpg', title: 'Aloe Vera'),
+                            image: 'assets/images/kentia.jpg', title: 'Kentia Palm'),
                         makeItem(
-                            image: 'assets/images/mother.jpg', title: 'Mother of Thousands'),
-                        makeItem(image: 'assets/images/panda.jpg',
-                            title: 'Panda Plant')
+                            image: 'assets/images/lady.jpg', title: 'Lady Palm'),
+                        makeItem(image: 'assets/images/parlor.jpg',
+                            title: 'Palor Pulm')
                       ],
                     ),
                   )),
