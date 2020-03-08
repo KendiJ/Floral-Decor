@@ -51,24 +51,24 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 20,
                           fontWeight: FontWeight.bold),)),
                     SizedBox(height: 30,),
-                    FadeAnimation(1.3, Container(
-                      padding: EdgeInsets.symmetric(vertical: 3),
-                      margin: EdgeInsets.symmetric(horizontal: 40),
-                      height: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.white,
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            prefixIcon: Icon(Icons.search, color: Colors.blue,),
-                            hintStyle: TextStyle(
-                                color: Colors.grey, fontSize: 15),
-                            hintText: "Search for Flowers..."
-                        ),
-                      ),
-                    )),
+//                    FadeAnimation(1.3, Container(
+//                      padding: EdgeInsets.symmetric(vertical: 3),
+//                      margin: EdgeInsets.symmetric(horizontal: 40),
+//                      height: 50,
+//                      decoration: BoxDecoration(
+//                        borderRadius: BorderRadius.circular(50),
+//                        color: Colors.white,
+//                      ),
+//                      child: TextField(
+//                        decoration: InputDecoration(
+//                            border: InputBorder.none,
+//                            prefixIcon: Icon(Icons.search, color: Colors.blue,),
+//                            hintStyle: TextStyle(
+//                                color: Colors.grey, fontSize: 15),
+//                            hintText: "Search for Flowers..."
+//                        ),
+//                      ),
+//                    )),
                     SizedBox(height: 30,)
                   ],
                 ),
@@ -187,14 +187,14 @@ class _HomePageState extends State<HomePage> {
                         makeItem(
                             image: 'assets/images/lady.jpg', title: 'Lady Palm'),
                         makeItem(image: 'assets/images/parlor.jpg',
-                            title: 'Palor Pulm')
+                            title: 'Palor Palm')
                       ],
                     ),
                   )),
                   SizedBox(height: 20,),
-                  FadeAnimation(1, Text("Succulent Plant", style: TextStyle(
+                  FadeAnimation(1, Text("Hunging Basket Plants", style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey[800],
+                      color: Colors.yellowAccent,
                       fontSize: 20),)),
                   SizedBox(height: 20,),
                   FadeAnimation(1.4, Container(
@@ -202,14 +202,14 @@ class _HomePageState extends State<HomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        makeItem(image: 'assets/images/snake.jpg',
-                            title: 'Snake Plant'),
+                        makeItem(image: 'assets/images/boston.jpg',
+                            title: 'Boston Fern'),
                         makeItem(
-                            image: 'assets/images/aloe.jpg', title: 'Aloe Vera'),
+                            image: 'assets/images/rabbit.jpg', title: 'Rabbit Foot'),
                         makeItem(
-                            image: 'assets/images/mother.jpg', title: 'Mother of Thousands'),
-                        makeItem(image: 'assets/images/panda.jpg',
-                            title: 'Panda Plant')
+                            image: 'assets/images/wondering.jpg', title: 'Wondering Jew'),
+                        makeItem(image: 'assets/images/air.jpg',
+                            title: 'Air Plant')
                       ],
                     ),
                   )),
