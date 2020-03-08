@@ -102,6 +102,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )),
 
+                  Divider(
+                    color: Colors.black,
+                  ),
+
                   SizedBox(height: 20,),
                   FadeAnimation(1, Text("Succulent Plant", style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -124,6 +128,10 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   )),
+
+                  Divider(
+                    color: Colors.black,
+                  ),
                   SizedBox(height: 20,),
                   FadeAnimation(1, Text("Foliage Plants", style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -147,6 +155,10 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   )),
+
+                  Divider(
+                    color: Colors.black,
+                  ),
                   SizedBox(height: 20,),
                   FadeAnimation(1, Text("Cactus Plants", style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -169,6 +181,10 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   )),
+
+                  Divider(
+                    color: Colors.black,
+                  ),
                   SizedBox(height: 20,),
                   FadeAnimation(1, Text("Indoor Palmm Plants", style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -191,6 +207,10 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   )),
+
+                  Divider(
+                    color: Colors.black,
+                  ),
                   SizedBox(height: 20,),
                   FadeAnimation(1, Text("Hunging Basket Plants", style: TextStyle(
                       fontWeight: FontWeight.bold,
