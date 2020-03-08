@@ -1,4 +1,4 @@
-package com.example.indoor_floral_plants
+package com.kendi.indoor_floral_plants
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
