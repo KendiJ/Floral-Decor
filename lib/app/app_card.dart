@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:indoor_floral_plants/app/app_colors.dart';
-import 'package:indoor_floral_plants/app/app_pics.dart';
 import 'package:indoor_floral_plants/app/app_strings.dart';
 import 'package:indoor_floral_plants/app/app_textStyle.dart';
+import 'package:indoor_floral_plants/pages/screens/cactus.dart';
+import 'package:indoor_floral_plants/pages/screens/flowering.dart';
+import 'package:indoor_floral_plants/pages/screens/foliage.dart';
+import 'package:indoor_floral_plants/pages/screens/hunging.dart';
+import 'package:indoor_floral_plants/pages/screens/palm.dart';
+import 'package:indoor_floral_plants/pages/screens/succulents.dart';
 
 
 class AppCard {
@@ -16,7 +21,7 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                 Image.asset(AppPics.flowering),
+                //  Image.asset(AppPics.flowering),
                  Text(
                    AppStrings.flowering,
                    style: AppTextStyle.textSize10.copyWith(
@@ -44,7 +49,7 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                 Image.asset(AppPics.flowering),
+                //  Image.asset(AppPics.succulents),
                  Text(
                    AppStrings.succulents,
                    style: AppTextStyle.textSize10.copyWith(
@@ -72,7 +77,7 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                 Image.asset(AppPics.flowering),
+                //  Image.asset(AppPics.foliage),
                  Text(
                    AppStrings.foliage,
                    style: AppTextStyle.textSize10.copyWith(
@@ -100,7 +105,7 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                 Image.asset(AppPics.cactus),
+                //  Image.asset(AppPics.cactus),
                  Text(
                    AppStrings.cactus,
                    style: AppTextStyle.textSize10.copyWith(
@@ -128,7 +133,7 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                 Image.asset(AppPics.indoors),
+                //  Image.asset(AppPics.indoors),
                  Text(
                    AppStrings.indoors,
                    style: AppTextStyle.textSize10.copyWith(
@@ -140,7 +145,7 @@ class AppCard {
             )
         ),
         onTap: () {
-          Navigator.pushNamed(context, IndoorPalmn.id);
+          Navigator.pushNamed(context, PalmnPlants.id);
         },
       );
     }
@@ -156,7 +161,7 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                 Image.asset(AppPics.hunging),
+                //  Image.asset(AppPics.hunging),
                  Text(
                    AppStrings.hunging,
                    style: AppTextStyle.textSize10.copyWith(
