@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indoor_floral_plants/app/app_colors.dart';
+import 'package:indoor_floral_plants/app/app_pics.dart';
 import 'package:indoor_floral_plants/app/app_strings.dart';
 import 'package:indoor_floral_plants/app/app_textStyle.dart';
 import 'package:indoor_floral_plants/pages/screens/cactus.dart';
@@ -21,10 +22,14 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                //  Image.asset(AppPics.flowering),
+                 Container(
+                   height: 100,
+                   width: 100,
+                   child: Image.asset(AppPics.flowering)
+                  ),
                  Text(
                    AppStrings.flowering,
-                   style: AppTextStyle.textSize10.copyWith(
+                   style: AppTextStyle.textSize15.copyWith(
                      color: AppColors.textColor
                    ),
                  )
@@ -49,10 +54,14 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                //  Image.asset(AppPics.succulents),
+                 Container(
+                   height: 100,
+                   width: 100,
+                   child: Image.asset(AppPics.succulents)
+                  ),
                  Text(
                    AppStrings.succulents,
-                   style: AppTextStyle.textSize10.copyWith(
+                   style: AppTextStyle.textSize15.copyWith(
                      color: AppColors.textColor
                    ),
                  )
@@ -77,10 +86,14 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                //  Image.asset(AppPics.foliage),
+                 Container(
+                   height: 100,
+                   width: 100,
+                   child: Image.asset(AppPics.foliage)
+                  ),
                  Text(
                    AppStrings.foliage,
-                   style: AppTextStyle.textSize10.copyWith(
+                   style: AppTextStyle.textSize15.copyWith(
                      color: AppColors.textColor
                    ),
                  )
@@ -105,10 +118,14 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                //  Image.asset(AppPics.cactus),
+                 Container(
+                   height: 100,
+                   width: 100,
+                   child: Image.asset(AppPics.cactus)
+                  ),
                  Text(
                    AppStrings.cactus,
-                   style: AppTextStyle.textSize10.copyWith(
+                   style: AppTextStyle.textSize15.copyWith(
                      color: AppColors.textColor
                    ),
                  )
@@ -133,10 +150,14 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                //  Image.asset(AppPics.indoors),
+                 Container(
+                   height: 100,
+                   width: 100,
+                   child: Image.asset(AppPics.indoors)
+                  ),
                  Text(
                    AppStrings.indoors,
-                   style: AppTextStyle.textSize10.copyWith(
+                   style: AppTextStyle.textSize15.copyWith(
                      color: AppColors.textColor
                    ),
                  )
@@ -161,10 +182,14 @@ class AppCard {
              padding: const EdgeInsets.all(25),
              child: Column(
                children: [
-                //  Image.asset(AppPics.hunging),
+                 Container(
+                   height: 100,
+                   width: 100,
+                   child: Image.asset(AppPics.hunging)
+                  ),
                  Text(
                    AppStrings.hunging,
-                   style: AppTextStyle.textSize10.copyWith(
+                   style: AppTextStyle.textSize15.copyWith(
                      color: AppColors.textColor
                    ),
                  )
