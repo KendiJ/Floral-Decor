@@ -9,7 +9,7 @@ class PalmnPlants extends StatefulWidget {
 class _PalmnPlantsState extends State<PalmnPlants> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
       
     );
   }

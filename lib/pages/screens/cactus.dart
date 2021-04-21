@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CuctusPlants extends StatefulWidget {
   static const id = 'cuctus';
@@ -9,7 +10,7 @@ class CuctusPlants extends StatefulWidget {
 class _CuctusPlantsState extends State<CuctusPlants> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
       
     );
   }
