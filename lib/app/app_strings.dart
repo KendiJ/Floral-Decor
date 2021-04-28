@@ -5,4 +5,5 @@ class AppStrings {
   static const String cactus = 'Cactus Plants';
   static const String indoors = 'Indoor Palmn \n Plants';
   static const String hunging = 'Hunging Basket \n Plants';
+  static const String plants = 'My Plants';
 }

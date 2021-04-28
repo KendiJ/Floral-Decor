@@ -3,12 +3,12 @@ import 'package:indoor_floral_plants/app/app_colors.dart';
 import 'package:indoor_floral_plants/app/app_pics.dart';
 import 'package:indoor_floral_plants/app/app_strings.dart';
 import 'package:indoor_floral_plants/app/app_textStyle.dart';
-import 'package:indoor_floral_plants/pages/screens/cactus.dart';
-import 'package:indoor_floral_plants/pages/screens/flowering.dart';
-import 'package:indoor_floral_plants/pages/screens/foliage.dart';
-import 'package:indoor_floral_plants/pages/screens/hunging.dart';
-import 'package:indoor_floral_plants/pages/screens/palm.dart';
-import 'package:indoor_floral_plants/pages/screens/succulents.dart';
+import 'package:indoor_floral_plants/pages/screens/Cactus/cactus.dart';
+import 'package:indoor_floral_plants/pages/screens/Flowering/flowering.dart';
+import 'package:indoor_floral_plants/pages/screens/Foliage/foliage.dart';
+import 'package:indoor_floral_plants/pages/screens/Hunging/hunging.dart';
+import 'package:indoor_floral_plants/pages/screens/Palms/palm.dart';
+import 'package:indoor_floral_plants/pages/screens/Succulents/succulents.dart';
 
 
 class AppCard {
