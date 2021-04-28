@@ -3,6 +3,8 @@ import 'package:indoor_floral_plants/app/app_colors.dart';
 import 'package:indoor_floral_plants/app/app_strings.dart';
 import 'package:indoor_floral_plants/app/app_textStyle.dart';
 
+import 'flamingkaty.dart';
+
 class FloweringPlants extends StatefulWidget {
   static const id = "flowering";
   @override
@@ -28,9 +30,12 @@ class _FloweringPlantsState extends State<FloweringPlants> {
               color: Colors.white,
               height: 100,
               width: double.infinity,
-              child: Text(
-                AppStrings.plants,
-                style: AppTextStyle.textSize28.copyWith(color: AppColors.textColor),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child: Text(
+                  AppStrings.plants,
+                  style: AppTextStyle.textSize28.copyWith(color: AppColors.textColor),
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -54,16 +59,21 @@ class _FloweringPlantsState extends State<FloweringPlants> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
-                  height: 200,
-                  width: 350,
-                  decoration: BoxDecoration(
-                    color: Colors.teal[900],
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      bottomLeft: Radius.circular(40),
-                    )
+                GestureDetector(
+                  child: Container(
+                    height: 200,
+                    width: 350,
+                    decoration: BoxDecoration(
+                      color: Colors.teal[900],
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        bottomLeft: Radius.circular(40),
+                      )
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.pushNamed(context, FlamingKaty.id);
+                  },
                 ),
               ],
             ),
