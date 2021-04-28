@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:indoor_floral_plants/pages/home_page.dart';
 
-import 'pages/screens/cactus.dart';
-import 'pages/screens/flowering.dart';
-import 'pages/screens/foliage.dart';
-import 'pages/screens/hunging.dart';
-import 'pages/screens/palm.dart';
-import 'pages/screens/succulents.dart';
+import 'pages/screens/Cactus/cactus.dart';
+import 'pages/screens/Flowering/flowering.dart';
+import 'pages/screens/Foliage/foliage.dart';
+import 'pages/screens/Hunging/hunging.dart';
+import 'pages/screens/Palms/palm.dart';
+import 'pages/screens/Succulents/succulents.dart';
 
 void main() => runApp(
   MaterialApp(

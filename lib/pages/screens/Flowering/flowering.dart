@@ -25,10 +25,13 @@ class _FloweringPlantsState extends State<FloweringPlants> {
         child: Column(
           children: [
             Container(
-              color: Colors.yellow,
+              color: Colors.white,
               height: 100,
               width: double.infinity,
-              child: Text("My Plants"),
+              child: Text(
+                AppStrings.plants,
+                style: AppTextStyle.textSize28.copyWith(color: AppColors.textColor),
+              ),
             ),
             SizedBox(height: 20),
             Row(
@@ -36,24 +39,12 @@ class _FloweringPlantsState extends State<FloweringPlants> {
               children: [
                 Container(
                   height: 200,
-                  width: 300,
-                  color: Colors.tealAccent,
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  height: 200,
-                  width: 300,
+                  width: 350,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage('assets/images/lady.jpg')),
-                    color: Colors.blueGrey,
+                    color: Colors.teal[900],
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
+                      topLeft: Radius.circular(40),
+                      bottomLeft: Radius.circular(40),
                     )
                   ),
                 ),
@@ -65,8 +56,14 @@ class _FloweringPlantsState extends State<FloweringPlants> {
               children: [
                 Container(
                   height: 200,
-                  width: 300,
-                  color: Colors.tealAccent,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.teal[900],
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      bottomLeft: Radius.circular(40),
+                    )
+                  ),
                 ),
               ],
             ),
@@ -76,8 +73,31 @@ class _FloweringPlantsState extends State<FloweringPlants> {
               children: [
                 Container(
                   height: 200,
-                  width: 300,
-                  color: Colors.tealAccent,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.teal[900],
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      bottomLeft: Radius.circular(40),
+                    )
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  height: 200,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.teal[900],
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      bottomLeft: Radius.circular(40),
+                    )
+                  ),
                 ),
               ],
             ),
