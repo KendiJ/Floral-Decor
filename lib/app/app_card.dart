@@ -23,8 +23,8 @@ class AppCard {
              child: Column(
                children: [
                  Container(
-                   height: 100,
-                   width: 100,
+                   height: 110,
+                   width: 110,
                    child: Image.asset(AppPics.flowering)
                   ),
                  Text(
