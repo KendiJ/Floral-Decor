@@ -1,21 +1,15 @@
-name: Development
+name: Deploy
 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-
-
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
     steps:
-
 
       - name : Checkout Repo
         uses: actions/checkout@v2
@@ -36,7 +30,16 @@ jobs:
           echo  flutter pub get
 
       - name : Flutter Analyze
-        run  : flutter analyze .
+        run  : flutter analyze
 
 
 
+      - name: Build
+          run: flutter build appbundle --flavor prod
+
+          - uses: r0adkll/upload-google-play@v1
+            with:
+              serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON_TEXT }}
+              packageName: com.kendi.indoor_floral_plants
+              releaseFile: build/app/outputs/bundle/prodRelease/app-prod-release.aab
+              track: internal
