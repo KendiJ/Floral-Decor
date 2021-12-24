@@ -3,7 +3,7 @@ name: Stagging
 on:
 
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 
 
