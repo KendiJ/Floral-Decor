@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class AppCards extends StatelessWidget {
   final Widget content;
   final Color color;
-  AppCards({this.content, this.color});
+  AppCards({required this.content, required this.color});
 
   
   @override
