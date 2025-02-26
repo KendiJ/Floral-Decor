@@ -91,41 +91,6 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-
-            // Image.asset('assets/images/ola.png', height: 400),
-            // const Spacer(),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       PageRouteBuilder(
-            //         pageBuilder: (context, animation, secondaryAnimation) =>
-            //             const PlantDetailsScreen(),
-            //         transitionsBuilder:
-            //             (context, animation, secondaryAnimation, child) {
-            //           return FadeTransition(opacity: animation, child: child);
-            //         },
-            //       ),
-            //     );
-            //   },
-            //   style: ElevatedButton.styleFrom(
-            //     backgroundColor:  Color(0xFFFFEB3B),
-            //     padding:
-            //         const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-            //     shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(30),
-            //     ),
-            //   ),
-            //   child: const Text(
-            //     'Get started',
-            //     style: TextStyle(
-            //       fontFamily: 'VT323',
-            //       fontSize: 18,
-            //       color: Color(0xFF1B4332),
-            //     ),
-            //   ),
-            // ),
-            // const SizedBox(height: 32),
           ],
         ),
       ),
