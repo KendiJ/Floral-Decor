@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'room_selection_screen.dart';
 
@@ -67,12 +68,12 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'home decor',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+              Text(
+                'home\ndecor',
+                style: GoogleFonts.patrickHand(
+                fontSize: 50,
+                color: Colors.black,
+              ),
               ),
               const Spacer(),
               Center(
