@@ -1,147 +1,152 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import 'room_selection_screen.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:http/http.dart' as http;
+import 'package:indoor_floral_plants/app/app_card.dart';
 
 class PlantDetailsScreen extends StatefulWidget {
   const PlantDetailsScreen({super.key});
 
   @override
-  State<PlantDetailsScreen> createState() => _PlantDetailsScreenState();
+  _PlantDetailsScreenState createState() => _PlantDetailsScreenState();
 }
 
-class _PlantDetailsScreenState extends State<PlantDetailsScreen>
-    with TickerProviderStateMixin {
-  late final AnimationController _controller;
-  late final Animation<Offset> _sizeAnimation;
-  late final Animation<Offset> _humidityAnimation;
-  late final Animation<Offset> _temperatureAnimation;
+class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
+  List<dynamic> flowers = [];
+  List<dynamic> filteredFlowers = [];
+  bool isLoading = true;
+  bool hasError = false;
+  TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      duration: const Duration(milliseconds: 800),
-      vsync: this,
-    );
-
-    _sizeAnimation = Tween<Offset>(
-      begin: const Offset(0, 1),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: const Interval(0.0, 0.6, curve: Curves.easeOut),
-    ));
-
-    _humidityAnimation = Tween<Offset>(
-      begin: const Offset(0, 1),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: const Interval(0.2, 0.8, curve: Curves.easeOut),
-    ));
-
-    _temperatureAnimation = Tween<Offset>(
-      begin: const Offset(0, 1),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: const Interval(0.4, 1.0, curve: Curves.easeOut),
-    ));
-
-    _controller.forward();
+    fetchFlowers();
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+  Future<void> fetchFlowers() async {
+    setState(() {
+      isLoading = true;
+      hasError = false;
+    });
+
+    try {
+      final response = await http.get(Uri.parse('http://localhost:8080'));
+
+      if (response.statusCode == 200) {
+        setState(() {
+          flowers = json.decode(response.body);
+          filteredFlowers = flowers;
+          isLoading = false;
+        });
+      } else {
+        throw Exception('Failed to load flowers');
+      }
+    } catch (e) {
+      setState(() {
+        hasError = true;
+        isLoading = false;
+      });
+    }
+  }
+
+  void filterPlants() {
+    String query = searchController.text.toLowerCase();
+    setState(() {
+      filteredFlowers = flowers
+          .where((flower) => flower['name'].toLowerCase().contains(query))
+          .toList();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5DC),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'home\ndecor',
-                style: GoogleFonts.patrickHand(
-                fontSize: 50,
-                color: Colors.black,
-              ),
-              ),
-              const Spacer(),
-              Center(
-                child: Image.asset('assets/images/ola.png', height: 300),
-              ),
-              const SizedBox(height: 32),
-              const Text(
-                'Decorative\nhouseplant',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  height: 1.2,
-                ),
-              ),
-              const SizedBox(height: 24),
-              SlideTransition(
-                position: _sizeAnimation,
-                child: const Text(
-                  'Size: Small',
-                  style: TextStyle(fontSize: 18),
-                ),
-              ),
-              const SizedBox(height: 16),
-              SlideTransition(
-                position: _humidityAnimation,
-                child: const Text(
-                  'Humidity: 68%',
-                  style: TextStyle(fontSize: 18),
-                ),
-              ),
-              const SizedBox(height: 16),
-              SlideTransition(
-                position: _temperatureAnimation,
-                child: const Text(
-                  'Temperature: 18-24°C',
-                  style: TextStyle(fontSize: 18),
-                ),
-              ),
-              const Spacer(),
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const RoomSelectionScreen(),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFFEB3B),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: const Text(
-                    'Plant now',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Color(0xFF1B4332),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+      backgroundColor: const Color(0xFFF5F2E7),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh, color: Colors.black),
+            onPressed: fetchFlowers,
           ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "Choose your\nspace",
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              "A collection of beautifully curated flowers from around the world.",
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: searchController,
+                    decoration: InputDecoration(
+                      hintText: "Search for a plant...",
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                InkWell(
+                  onTap: filterPlants,
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.black,
+                    ),
+                    child: const Icon(Icons.search, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Expanded(
+              child: isLoading
+                  ? const Center(child: CircularProgressIndicator())
+                  : hasError
+                      ? const Center(
+                          child: Text(
+                            "Failed to load data. Check your connection!",
+                            style: TextStyle(color: Colors.red, fontSize: 16),
+                          ),
+                        )
+                      : MasonryGridView.builder(
+                          gridDelegate:
+                              const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                          ),
+                          itemCount: filteredFlowers.length,
+                          itemBuilder: (context, index) {
+                            var flower = filteredFlowers[index];
+                            return FlowerCard(flower: flower);
+                          },
+                        ),
+            ),
+          ],
         ),
       ),
     );
