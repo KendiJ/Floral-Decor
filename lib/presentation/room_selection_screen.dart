@@ -1,133 +1,175 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:indoor_floral_plants/presentation/plant_details_screen.dart';
 
-class RoomSelectionScreen extends StatefulWidget {
+class RoomSelectionScreen extends StatelessWidget {
   const RoomSelectionScreen({super.key});
-
-  @override
-  State<RoomSelectionScreen> createState() => _RoomSelectionScreenState();
-}
-
-class _RoomSelectionScreenState extends State<RoomSelectionScreen> {
-  String? selectedRoom;
-
-  Future<void> _handleRoomSelection(String room) async {
-    setState(() => selectedRoom = room);
-    
-    // Simulate loading with tick animation
-    await Future.delayed(const Duration(milliseconds: 800));
-    
-    if (mounted) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const Scaffold(
-            body: Center(child: Text('Next Screen')),
-          ),
-        ),
-      );
-    }
-  }
-
-  Widget _buildRoomButton(String room, String imagePath) {
-    final isSelected = selectedRoom == room;
-    
-    return GestureDetector(
-      onTap: () => _handleRoomSelection(room),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF1B4332) : Colors.transparent,
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Column(
-          children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
-                  child: Image.asset(
-                    imagePath,
-                    width: 100,
-                    height: 100,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                if (isSelected)
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: const Icon(
-                      Icons.check,
-                      color: Colors.white,
-                      size: 40,
-                    ),
-                  ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Text(
-              room,
-              style: TextStyle(
-                fontSize: 16,
-                color: isSelected ? Colors.white : Colors.black,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5DC),
+      backgroundColor: const Color(0xFFF5F2E8), // Cream background color
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                  const Text(
-                    'Choose your place',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+              // Back button and profile
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     IconButton(
+              //       icon: const Icon(Icons.arrow_back),
+              //       onPressed: () => Navigator.pop(context),
+              //     ),
+              //     const CircleAvatar(
+              //       radius: 20,
+              //       backgroundColor: Color(0xFFD2B48C),
+              //     ),
+              //   ],
+              // ),
+              const SizedBox(height: 20),
+              // Title
+              Text(
+                'Choose\nyour place',
+                style: GoogleFonts.patrickHand(
+                  fontSize: 40,
+                  color: const Color(0xFF1B4332),
+                ),
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 40),
+              // Room options
               Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 20,
+                child: Stack(
                   children: [
-                    _buildRoomButton('Bedroom', 'assets/images/ola.png'),
-                    _buildRoomButton('Living room', 'assets/images/ola.png'),
-                    _buildRoomButton('Bathroom', 'assets/images/ola.png'),
-                    _buildRoomButton('Kitchen', 'assets/images/ola.png'),
+                    
+                    SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              _buildRoomOption(
+                                context,
+                                'Living room',
+                                'assets/space/living.jpeg',
+                                // isSelected: true,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              _buildRoomOption(
+                                context,
+                                'Kitchen',
+                                'assets/space/kitchen.jpeg',
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              _buildRoomOption(
+                                context,
+                                'Bathroom',
+                                'assets/space/bathroom.jpeg',
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              _buildRoomOption(
+                                context,
+                                'Bedroom',
+                                'assets/space/bedroom.jpeg',
+                                // isSelected: true,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Room circles
                   ],
+                ),
+              ),
+              // Menu button at bottom
+              Center(
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF1B4332),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: const Icon(
+                    Icons.grid_view_rounded,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildRoomOption(
+    BuildContext context,
+    String title,
+    String imagePath, {
+    bool isSelected = false,
+  }) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const PlantDetailsScreen(),
+          ),
+        );
+      },
+      child: Column(
+        children: [
+          Container(
+            width: 180,
+            height: 180,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: isSelected ? const Color(0xFF1B4332) : Colors.white,
+              border: Border.all(
+                color: const Color(0xFF1B4332),
+                width: 2,
+              ),
+              image: DecorationImage(
+                image: AssetImage(imagePath),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: isSelected
+                ? const Center(
+                    child: Icon(
+                      Icons.check,
+                      color: Colors.white,
+                      size: 40,
+                    ),
+                  )
+                : null,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            title,
+            style: GoogleFonts.patrickHand(
+              fontSize: 25,
+              color: const Color(0xFF1B4332),
+            ),
+          ),
+        ],
       ),
     );
   }

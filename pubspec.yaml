@@ -40,6 +40,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/pics/
+    - assets/space/
   
   fonts:
     - family: VT323
