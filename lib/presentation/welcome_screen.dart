@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:indoor_floral_plants/presentation/plant_details_screen.dart';
+import 'package:indoor_floral_plants/presentation/room_selection_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -47,12 +47,7 @@ class WelcomeScreen extends StatelessWidget {
                         PageRouteBuilder(
                           pageBuilder:
                               (context, animation, secondaryAnimation) =>
-                                  const PlantDetailsScreen(),
-                          transitionsBuilder:
-                              (context, animation, secondaryAnimation, child) {
-                            return FadeTransition(
-                                opacity: animation, child: child);
-                          },
+                                  const RoomSelectionScreen(),
                         ),
                       );
                     },

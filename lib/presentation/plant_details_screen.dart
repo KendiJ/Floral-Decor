@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:indoor_floral_plants/app/app_card.dart';
 
@@ -79,14 +80,13 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Choose your\nspace",
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.green,
+             Text(
+                'Choose\nyour Space',
+                style: GoogleFonts.patrickHand(
+                  fontSize: 40,
+                  color: const Color(0xFF1B4332),
+                ),
               ),
-            ),
             const SizedBox(height: 8),
             const Text(
               "A collection of beautifully curated flowers from around the world.",
