@@ -8,42 +8,42 @@ class RoomSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F2E8), // Cream background color
+      backgroundColor: Color(0xFFD2B48C),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Back button and profile
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     IconButton(
-              //       icon: const Icon(Icons.arrow_back),
-              //       onPressed: () => Navigator.pop(context),
-              //     ),
-              //     const CircleAvatar(
-              //       radius: 20,
-              //       backgroundColor: Color(0xFFD2B48C),
-              //     ),
-              //   ],
-              // ),
               const SizedBox(height: 20),
               // Title
-              Text(
-                'Choose\nyour place',
-                style: GoogleFonts.patrickHand(
-                  fontSize: 40,
-                  color: const Color(0xFF1B4332),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Select\nyour space',
+                    style: GoogleFonts.patrickHand(
+                      fontSize: 40,
+                      color: const Color(0xFF1B4332),
+                    ),
+                  ),
+                  
+                  const CircleAvatar(
+                    backgroundImage: AssetImage('assets/images/ola.png'),
+                    radius: 30,
+                    backgroundColor: Colors.orange,
+                  ),
+                ],
               ),
               const SizedBox(height: 40),
               // Room options
               Expanded(
                 child: Stack(
                   children: [
-                    
+                    Image.asset(
+                      'assets/images/ola.png',
+                      height: 200,
+                    ),
                     SingleChildScrollView(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -95,21 +95,6 @@ class RoomSelectionScreen extends StatelessWidget {
                     ),
                     // Room circles
                   ],
-                ),
-              ),
-              // Menu button at bottom
-              Center(
-                child: Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF1B4332),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: const Icon(
-                    Icons.grid_view_rounded,
-                    color: Colors.white,
-                  ),
                 ),
               ),
             ],

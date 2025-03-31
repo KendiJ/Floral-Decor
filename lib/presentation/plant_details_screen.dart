@@ -32,7 +32,9 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
     });
 
     try {
+      print('This error');
       final response = await http.get(Uri.parse('http://localhost:8080'));
+      print(response);
 
       if (response.statusCode == 200) {
         setState(() {
@@ -63,7 +65,7 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F2E7),
+      backgroundColor: Color(0xFFD2B48C),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -80,17 +82,17 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Text(
-                'Choose\nyour Space',
-                style: GoogleFonts.patrickHand(
-                  fontSize: 40,
-                  color: const Color(0xFF1B4332),
-                ),
+            Text(
+              'Choose\nyour Space',
+              style: GoogleFonts.patrickHand(
+                fontSize: 40,
+                color: const Color(0xFF1B4332),
               ),
+            ),
             const SizedBox(height: 8),
             const Text(
               "A collection of beautifully curated flowers from around the world.",
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              style: TextStyle(fontSize: 16, color: Colors.black),
             ),
             const SizedBox(height: 16),
             Row(

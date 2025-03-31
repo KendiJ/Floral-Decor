@@ -35,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
             const Spacer(),
             Stack(
               children: [
-                Image.asset('assets/images/ola.png', height: 500),
+                Image.asset('assets/images/ola.png', height: 300),
                 Spacer(),
                 Positioned(
                   left: 150,
